@@ -5,7 +5,14 @@ description = "This is a poetry demo app"
 authors = [{ name = "Ulug'bek G'ozikhonov", email = "devkhon@gamil.com" }]
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["sqlalchemy (>=2.0.38,<3.0.0)", "alembic (>=1.14.1,<2.0.0)", "asyncpg (>=0.30.0,<0.31.0)", "pytest (>=8.3.4,<9.0.0)"]
+dependencies = [
+    "sqlalchemy (>=2.0.38,<3.0.0)",
+    "alembic (>=1.14.1,<2.0.0)",
+    "asyncpg (>=0.30.0,<0.31.0)",
+    "fastapi (>=0.115.8,<0.116.0)",
+    "uvicorn (>=0.34.0,<0.35.0)",
+    "pytest (>=8.3.4,<9.0.0)",
+]
 
 [tool.poetry]
 package-mode = false
