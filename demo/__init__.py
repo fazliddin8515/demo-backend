@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, ConfigDict
@@ -8,9 +10,11 @@ from database.models import User
 
 app = FastAPI()
 
+FRONT_ORIGIN = os.getenv("FRONT_ORIGIN", "")
+print(FRONT_ORIGIN)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8080"],
+    allow_origins=[FRONT_ORIGIN],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
