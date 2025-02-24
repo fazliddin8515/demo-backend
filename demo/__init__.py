@@ -11,10 +11,10 @@ from database.models import User
 app = FastAPI()
 
 FRONT_ORIGIN = os.getenv("FRONT_ORIGIN", "")
-print(FRONT_ORIGIN)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONT_ORIGIN],
+    allow_origins=["http://139.59.125.100:8080/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
