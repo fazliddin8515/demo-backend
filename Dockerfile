@@ -1,4 +1,6 @@
-FROM python:3.11
+FROM python:3.11-slim
+
+RUN apt update && apt install -y curl gcc libpq-dev
 
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
@@ -6,9 +8,12 @@ ENV PATH=/root/.local/bin:$PATH
 
 WORKDIR /app
 
+COPY pyproject.toml poetry.lock ./
+
+RUN poetry install --no-root --only main
+
 COPY . .
 
-RUN poetry install --no-root --only main && \
-    chmod +x /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 
 ENTRYPOINT [ "/app/entrypoint.sh" ]
