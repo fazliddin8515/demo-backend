@@ -9,12 +9,14 @@ services:
     restart: unless-stopped
 
   app:
-    depends_on:
-      - postgres
     build: .
+    ports:
+      - 8000:8000
     environment:
       - DB_URI=${DB_URI}
     restart: unless-stopped
+    depends_on:
+      - postgres
 
 volumes:
   postgres_data:
