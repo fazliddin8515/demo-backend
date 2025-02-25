@@ -14,7 +14,7 @@ FRONT_ORIGIN = os.getenv("FRONT_ORIGIN", "")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://139.59.125.100:8080/"],
+    allow_origins=[FRONT_ORIGIN],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
