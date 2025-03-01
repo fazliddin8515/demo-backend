@@ -21,7 +21,7 @@ down_revision: str | None = "0c66dcb39eaf"
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
 
-users = [{"id": 1, "username": "husan", "email": "husan@gmail.com"}]
+users = [{"id": 1, "username": "husan", "email": "husan.eshonqulov.00@gmail.com"}]
 
 
 def upgrade() -> None:
